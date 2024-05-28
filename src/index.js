@@ -7,8 +7,8 @@ import "./config/database.js";
 
 import errorHandler from "./middleware/errorHandler.js";
 import errorHandler404 from "./middleware/errorHandler404.js";
-/* import TodosRoute from "./controller/TodosRoute.js";
-import UserRoute from "./controller/UserRoute.js"; */
+import AppointmentRoute from "./controller/AppointmentRoute.js";
+import UserRoute from "./Controller/UserRoute.js";
 
 const app = express();
 
@@ -16,13 +16,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(errorHandler);
-app.use(errorHandler404);
 
 //ROUTES
 app.get("/", (req, res) => {
   return res.json("From backside");
 });
+
+app.use("/users", UserRoute);
+app.use("/appointments", AppointmentRoute);
+app.use(errorHandler);
+app.use(errorHandler404);
 
 const port = 3302;
 

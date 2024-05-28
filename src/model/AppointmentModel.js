@@ -13,7 +13,14 @@ const AppointmentModel = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    task: {
+    illness: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
+    doctorId: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -23,6 +30,10 @@ const AppointmentModel = sequelize.define(
     },
     time: {
       type: DataTypes.TIME,
+      allowNull: false,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
