@@ -28,6 +28,9 @@ const User = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    pictureURL: {
+      type: DataTypes.STRING,
+    },
     role: {
       type: DataTypes.STRING,
       defaultValue: "user",
