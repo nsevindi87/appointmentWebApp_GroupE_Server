@@ -20,7 +20,7 @@ const AppointmentModel = sequelize.define(
     description: {
       type: DataTypes.STRING,
     },
-    doctorId: {
+    doctorName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
